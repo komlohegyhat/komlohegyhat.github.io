@@ -55,18 +55,33 @@
     .flipbook-wrapper {
       width: 100%;
       max-width: 850px;
+      height: 600px;
       margin: 0 auto;
-      aspect-ratio: 4 / 3;
       overflow: hidden;
       border-radius: 8px;
-      border: 1px solid #ddd;
       background: #eee;
     }
 
     .flipbook-wrapper iframe {
       width: 100%;
       height: 100%;
-      border: 0;
+      border: 1px solid lightgray;
+      display: block;
+    }
+
+    .open-link {
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    .open-link a {
+      color: #1a5fd0;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .open-link a:hover {
+      text-decoration: underline;
     }
 
     footer {
@@ -74,6 +89,39 @@
       color: #777;
       font-size: 14px;
       padding: 24px 16px;
+    }
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 25px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      main {
+        margin: 20px auto;
+        padding: 0 12px 32px 12px;
+      }
+
+      .book-box {
+        padding: 14px;
+      }
+
+      .book-title {
+        font-size: 19px;
+      }
+
+      .flipbook-wrapper {
+        height: 500px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .flipbook-wrapper {
+        height: 420px;
+      }
     }
   </style>
 </head>
@@ -91,11 +139,18 @@
 
       <div class="flipbook-wrapper">
         <iframe
-          src="https://heyzine.com/flip-book/43f178dcd6.html"
-          allowfullscreen
+          allowfullscreen="allowfullscreen"
+          allow="clipboard-write"
           scrolling="no"
-          allow="clipboard-write *;">
+          class="fp-iframe"
+          src="https://heyzine.com/flip-book/43f178dcd6.html">
         </iframe>
+      </div>
+
+      <div class="open-link">
+        <a href="https://heyzine.com/flip-book/43f178dcd6.html" target="_blank" rel="noopener noreferrer">
+          Megnyitás teljes képernyőn / új lapon
+        </a>
       </div>
     </section>
   </main>
@@ -106,4 +161,3 @@
 
 </body>
 </html>
-#<iframe allowfullscreen="allowfullscreen" allow="clipboard-write" scrolling="no" class="fp-iframe" src="https://heyzine.com/flip-book/43f178dcd6.html" style="border: 1px solid lightgray; width: 100%; height: 600px;"></iframe>
